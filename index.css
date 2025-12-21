@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* TradeZella-inspired Pro Dark Theme (RGB Values) */
+  --color-slate-900: 11 14 17;
+  /* #0B0E11 - Main Background */
+  --color-slate-800: 21 25 33;
+  /* #151921 - Card/Panel Background */
+  --color-slate-700: 42 46 57;
+  /* #2A2E39 - Borders/Dividers */
+  --color-slate-600: 67 73 86;
+  /* #434956 - Secondary Borders/Inputs */
+  --color-slate-500: 120 125 141;
+  /* #787D8D - Muted Text */
+  --color-slate-400: 163 168 184;
+  /* #A3A8B8 - Body Text */
+  --color-slate-300: 205 209 218;
+  /* #CDD1DA - High Contrast Text */
+  --color-slate-200: 230 233 239;
+  /* #E6E9EF - Primary Headings */
+  --color-slate-100: 241 245 249;
+  /* #f1f5f9 */
+  --color-slate-50: 248 250 252;
+  /* #f8fafc */
+  --color-white: 255 255 255;
+  /* #ffffff */
+}
+
+html.light {
+  /* Light Mode Mapping (Inverted to RGB) */
+  --color-slate-900: 248 250 252;
+  /* Main Bg -> Slate 50 (#f8fafc) */
+  --color-slate-800: 255 255 255;
+  /* Card Bg -> White (#ffffff) */
+  --color-slate-700: 226 232 240;
+  /* Borders -> Slate 200 (#e2e8f0) */
+  --color-slate-600: 203 213 225;
+  /* Input Borders -> Slate 300 (#cbd5e1) */
+  --color-slate-500: 148 163 184;
+  /* Muted Text -> Slate 400 (#94a3b8) */
+  --color-slate-400: 100 116 139;
+  /* Muted Text -> Slate 500 (#64748b) */
+  --color-slate-300: 71 85 105;
+  /* Secondary Text -> Slate 600 (#475569) */
+  --color-slate-200: 51 65 85;
+  /* Primary Text -> Slate 700 (#334155) */
+  --color-slate-100: 30 41 59;
+  --color-slate-50: 15 23 42;
+  --color-white: 15 23 42;
+  /* Text White -> Slate 900 (#0f172a) */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: rgb(var(--color-slate-900));
+  color: rgb(var(--color-slate-200));
+}
+
+/* Ensure buttons with 'text-white' remain white in light mode for contrast against primary colors */
+html.light button.text-white,
+html.light .bg-blue-600.text-white,
+html.light .bg-emerald-600.text-white,
+html.light .bg-indigo-600.text-white,
+html.light .bg-rose-600.text-white {
+  color: #ffffff !important;
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-slate-900));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-slate-700));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-slate-600));
+}
+
+/* Hide TradingView Attribution */
+a[href*="tradingview.com"] {
+  display: none !important;
+}
+
+/* Hide Number Input Spinners (Chrome, Safari, Edge, Opera) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide Number Input Spinners (Firefox) */
+input[type=number] {
+  -moz-appearance: textfield;
+}
